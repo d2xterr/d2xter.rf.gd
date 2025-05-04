@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d2xter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="dots" id="dots"></div>
+    <div class="container">
+        <div class="enter-screen" id="enterScreen">
+            <h1 class="animated-title">d2xter</h1>
+        </div>
+        
+        <div class="main-content" id="mainContent">
+            <div class="profile-section">
+                <img id="discordAvatar" src="" alt="Discord Avatar" class="profile-picture">
+                <h2 id="discordUsername">Loading...</h2>
+                <div class="discord-status">
+                    <div class="status-indicator" id="statusIndicator"></div>
+                    <span id="discordStatus">Loading...</span>
+                </div>
+            </div>
+
+            <div class="about-me">
+                <h2>About Me</h2>
+                <div class="info-section">
+                    <p>Hey there! 👋 I'm a 17-year-old dev from the UK who's obsessed with coding. Currently working on EchoUtil, a Discord bot designed specifically for Minecraft servers.</p>
+                </div>
+                <div class="skills-container">
+                    <ul class="skills-list">
+                        <li>Python</li>
+                        <li>C#</li>
+                        <li>NodeJS</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <p>Check out my socials below! 🚀</p>
+                </div>
+                <div class="discord-activity" id="discordActivity">
+                    <div class="activity-content">
+                        <img id="activityImage" src="" alt="Activity Image" class="activity-image">
+                        <div class="activity-info">
+                            <div class="activity-header">
+                                <span id="activityType" class="activity-type"></span>
+                                <h4 id="activityName">Loading...</h4>
+                            </div>
+                            <p id="activityDetails"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/d2xterr" target="_blank" class="social-button">
+                        <img src="assets/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://tiktok.com/@rily" target="_blank" class="social-button">
+                        <img src="assets/tiktok.png" alt="TikTok">
+                    </a>
+                </div>
+                <div class="volume-control">
+                    <div class="volume-icon">🔊</div>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="backgroundMusic" loop>
+        <source src="assets/background.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
