@@ -12,19 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const dot = document.createElement('div');
             dot.className = 'dot';
             
-            // Random position
+            
             dot.style.left = `${Math.random() * 100}%`;
             dot.style.top = `${Math.random() * 100}%`;
             
-            // Random size
+        
             const size = Math.random() * 4 + 2;
             dot.style.width = `${size}px`;
             dot.style.height = `${size}px`;
             
-            // Random animation delay
+            
             dot.style.animationDelay = `${Math.random() * 15}s`;
             
-            // Random opacity
+            
             dot.style.opacity = Math.random() * 0.5 + 0.3;
             
             dotsContainer.appendChild(dot);
@@ -80,11 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         activityImage.style.display = 'none';
                     }
                     
-                    // Set activity name and details
+                    
                     activityName.textContent = activity.name;
                     activityDetails.textContent = activity.details || '';
                     
-                    // Set activity type
+                    
                     const typeMap = {
                         0: 'Playing',
                         1: 'Streaming',
@@ -105,26 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Handle click to enter
+    
     enterScreen.addEventListener('click', () => {
         enterScreen.style.opacity = '0';
         setTimeout(() => {
             enterScreen.style.display = 'none';
             mainContent.style.display = 'block';
-            // Start playing music
+            
             backgroundMusic.play().catch(error => {
                 console.log('Autoplay prevented:', error);
             });
         }, 500);
     });
 
-    // Handle mobile touch events
+    
     enterScreen.addEventListener('touchend', (e) => {
         e.preventDefault();
         enterScreen.click();
     });
 
-    // Handle music autoplay on mobile
+    
     document.addEventListener('click', () => {
         if (backgroundMusic.paused) {
             backgroundMusic.play().catch(error => {
@@ -133,14 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Volume control
+    
     const volumeSlider = document.getElementById('volumeSlider');
 
     volumeSlider.addEventListener('input', (e) => {
         const volume = e.target.value / 100;
         backgroundMusic.volume = volume;
         
-        // Update volume icon based on volume level
+        
         const volumeIcon = document.querySelector('.volume-icon');
         if (volume === 0) {
             volumeIcon.textContent = '🔇';
@@ -151,16 +151,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize volume
+
     backgroundMusic.volume = volumeSlider.value / 100;
 
-    // Initialize
+    
     createDots();
     fetchDiscordInfo();
-    // Refresh Discord info every 30 seconds
-    setInterval(fetchDiscordInfo, 30000);
+    
+    setInterval(fetchDiscordInfo, 10000);
 
-    // Title animation on hover
+    
     const title = document.querySelector('.animated-title');
     title.addEventListener('mouseover', () => {
         title.style.transform = 'scale(1.1)';
